@@ -1,10 +1,10 @@
 <script>
     import { onMount } from 'svelte';
-    import { navigate } from '$app/navigation';
+    import {goto} from '$app/navigation'
 
     onMount(async () => {
         if (localStorage.getItem('logintype') !== '') {
-            navigate('/');
+            goto('/');
         }
     });
 </script>

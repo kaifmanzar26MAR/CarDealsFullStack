@@ -1,6 +1,7 @@
 <script>
     let username = '';
     let password = '';
+    import { onMount } from 'svelte';
     import {goto} from '$app/navigation'
     const handleSubmit = async () => {
       try {
@@ -27,7 +28,7 @@
       }
     }
 
-  import { onMount } from 'svelte';
+  
     onMount(async()=>{
         if(localStorage.getItem('logintype')!=''){
             goto('/')
