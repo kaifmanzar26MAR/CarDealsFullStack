@@ -70,10 +70,10 @@
       <a href="/" class="btn btn-ghost text-xl">CarDeals</a>
     </div>
     <div class="flex-1 ml-2 mr-5">
-      {#if user && user.user_email}
-        <a href='/user'>{user.user_email}</a>
-      {:else if user && user.dealership_email}
-      <a href='/dealer'>{user.dealership_email}</a>
+      {#if user && user?.user_email}
+        <a href='/user'>{user?.user_email}</a>
+      {:else if user && user?.dealership_email}
+      <a href='/dealer'>{user?.dealership_email}</a>
       {:else}
         <!-- If user is not logged in, you can show a different UI or redirect to login -->
         Not Logged In

@@ -102,12 +102,12 @@
     <div class="w-full flex flex-wrap gap-5 items-start justify-start p-5">
         
         {#if DealerCars}
-        {#each DealerCars as car (car._id)}
+        {#each DealerCars as car (car?._id)}
         
         <div class="card w-72 bg-base-100 shadow-xl">
-            <figure><img class="w-72 h-40 object-fill" src={car.car_info['imageUrl']} alt="Car" /></figure>
+            <figure><img class="w-72 h-40 object-fill" src={car?.car_info['imageUrl']} alt="Car" /></figure>
             <div class="card-body">
-                <p>{car.type}-{car.name}-{car.model}</p>
+                <p>{car?.type}-{car?.name}-{car?.model}</p>
                 
                 <div class="card-actions justify-end">
                                         <button class="btn btn-primary" on:click={() =>{cardeal=car; document.getElementById('my_modal_5').showModal()}}>Create Deal</button>

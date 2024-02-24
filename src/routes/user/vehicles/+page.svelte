@@ -75,13 +75,13 @@
     <div class="w-full flex flex-wrap gap-5 items-start justify-start p-5">
       
        {#if allvehicles}
-        {#each allvehicles as vehicle (vehicle._id)}
+        {#each allvehicles as vehicle (vehicle?._id)}
           
           <div class="card w-72 bg-base-100 shadow-xl">
-            <figure><img class="w-72 h-40 object-fill" src={vehicle.vehicle_info.car_image} alt="car" /></figure>
+            <figure><img class="w-72 h-40 object-fill" src={vehicle?.vehicle_info.car_image} alt="car" /></figure>
             <div class="card-body">
-                <p>{vehicle.vehicle_info.car_name}-{vehicle.vehicle_info.car_type}-{vehicle.vehicle_info.car_model}</p>
-              <p>Price: {vehicle.vehicle_info.car_price} <br/>Registration: {vehicle.vehicle_info.registration}</p>
+                <p>{vehicle?.vehicle_info.car_name}-{vehicle?.vehicle_info.car_type}-{vehicle?.vehicle_info.car_model}</p>
+              <p>Price: {vehicle?.vehicle_info.car_price} <br/>Registration: {vehicle?.vehicle_info.registration}</p>
               
             </div>
           </div>

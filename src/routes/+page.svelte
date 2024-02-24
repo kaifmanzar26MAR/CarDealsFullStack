@@ -90,13 +90,13 @@ let logintype='';
   <div class="w-full flex flex-wrap items-start justify-start p-5 gap-5">
     
     {#if alldeals}
-      {#each alldeals as deal, index (deal._id)}
+      {#each alldeals as deal, index (deal?._id)}
         <div class="card w-72 bg-base-100 shadow-xl">
-          <figure><img class="w-72 h-40 object-fill" src={deal.deal_info.car_image} alt="car" /></figure>
+          <figure><img class="w-72 h-40 object-fill" src={deal?.deal_info.car_image} alt="car" /></figure>
           <div class="card-body">
-            <h2 class="card-title text-lg">Car Name: {deal.deal_info.car_name}</h2>
-            <p>Price: {deal.deal_info.price}, year: {deal.deal_info.year} </p>
-            <p>Reg. no {deal.deal_info.registration}</p>
+            <h2 class="card-title text-lg">Car Name: {deal?.deal_info.car_name}</h2>
+            <p>Price: {deal?.deal_info.price}, year: {deal?.deal_info.year} </p>
+            <p>Reg. no {deal?.deal_info.registration}</p>
             {#if logintype==='user'}
             <div class="card-actions justify-end">
               <button class="btn btn-primary" on:click={() => buyfun(deal)}>Buy Now</button>
