@@ -74,7 +74,14 @@ let logintype='';
   };
 
   onMount(async () => {
+    console.log(localStorage.getItem('logindata'));
+    if(localStorage.getItem('logindata')===null){
+      localStorage.setItem('logindata','');
+      localStorage.setItem('logintype','');
+      consol.log('done',localStorage.getItem('logindata'))
+    }
     logintype=localStorage.getItem('logintype');
+    
     alldeals = await getDeals();
 
     // Fetch car details for each deal and update the cardetails array

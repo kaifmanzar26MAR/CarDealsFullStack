@@ -3,7 +3,7 @@
     import {goto} from '$app/navigation'
 
     onMount(async () => {
-        if (localStorage.getItem('logintype') !== '') {
+        if (localStorage.getItem('logintype')==='user' || localStorage.getItem('logintype')==='dealer') {
             goto('/');
         }
     });

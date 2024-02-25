@@ -30,8 +30,8 @@
 
   import { onMount } from 'svelte';
     onMount(async()=>{
-        if(localStorage.getItem('logintype')!=''){
-            goto('/')
+        if (localStorage.getItem('logintype')==='user' || localStorage.getItem('logintype')==='dealer') {
+            goto('/');
         }
     })
 
